@@ -14,17 +14,16 @@
 
 <footer id="colophon" class="site-footer">
 	<div class="site-info">
-		<a href="<?php echo esc_url(__('https://wordpress.org/', 'ecofold')); ?>">
-			<?php
-			/* translators: %s: CMS name, i.e. WordPress. */
-			printf(esc_html__('Proudly powered by %s', 'ecofold'), 'WordPress');
-			?>
-		</a>
-		<span class="sep"> | </span>
-		<?php
-		/* translators: 1: Theme name, 2: Theme author. */
-		printf(esc_html__('Theme: %1$s by %2$s.', 'ecofold'), 'ecofold', '<a href="http://www.ejdg.com.ar">Eugenio Jauregui</a>');
-		?>
+		<h2>Contacto</h2>
+		<div class="logo"><img src="<?php bloginfo('template_directory'); ?>/img/SVG/logo-ecofold.svg" alt="Ecofold" width="140" /></div>
+		<div class="info">
+			<ul>
+				<li><a href="mailto:info@estudiopenta.com" target="_blank">info@estudiopenta.com</a></li>
+				<li>Buenos Aires, Argentina</li>
+				<li><a href="tel:54 11 4793 6515" target="_blank">(54 11) 4793 6515 </a></li>
+			</ul>
+			<div>&copy; <?= date('Y') ?> Estudio Penta | Gral. Paunero 1926 | Martinez | Provincia de Buenos Aires | Argentina</div>
+		</div>
 	</div><!-- .site-info -->
 </footer><!-- #colophon -->
 </div><!-- #page -->

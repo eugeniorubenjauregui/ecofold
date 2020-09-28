@@ -2,7 +2,7 @@
     <div class="content">
 
         <div class="text">
-            <h3>Formatos de <img src="<?php bloginfo('template_directory'); ?>/img/SVG/logo-ecofold-white.svg" alt="Ecofold" width="120" /></h3>
+            <h3>Formatos de <img src="<?php bloginfo('template_directory'); ?>/img/SVG/logo-ecofold-white.svg" alt="Ecofold" width="140" /></h3>
            
             <ul class="formats">
                 <li>

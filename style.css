@@ -82,6 +82,11 @@ body {
     overflow-x: hidden;
 }
 
+.load {
+    overflow: hidden;
+    height: 100vh;
+}
+
 /**
  * Render the `main` element consistently in IE.
  */
@@ -564,13 +569,34 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-    border: 1px solid;
-    border-color: #ccc #ccc #bbb;
-    border-radius: 3px;
-    background: #e6e6e6;
-    color: rgba(0, 0, 0, 0.8);
-    line-height: 1;
-    padding: 0.6em 1em 0.4em;
+    border: none;
+    font-size: 20px;
+    background: #51bb47;
+    width: fit-content;
+    border-radius: 50px;
+    color: #fff;
+    padding: 0 40px;
+    transition: ease all 0.2s;
+    cursor: pointer;
+    min-height: 40px;
+}
+
+.wpcf7-not-valid-tip {
+    color: #dc3232;
+    font-size: 11px;
+    font-weight: normal;
+    display: block;
+    position: absolute;
+    left: 4px;
+    top: 20px;
+    z-index: 2;
+    width: 100%;
+    text-align: left;
+    min-width: 400px;
+}
+
+.wpcf7 form .wpcf7-response-output {
+    font-size: 16px;
 }
 
 button:hover,
@@ -607,10 +633,12 @@ input[type="datetime"],
 input[type="datetime-local"],
 input[type="color"],
 textarea {
-    color: #666;
-    border: 1px solid #ccc;
+    color: #222;
+    border: none;
     border-radius: 3px;
     padding: 3px;
+    border-bottom: 2px solid #222;
+    margin: 4px;
 }
 
 input[type="text"]:focus,
@@ -637,7 +665,10 @@ select {
 }
 
 textarea {
-    width: 100%;
+    width: 84%;
+    max-height: 175px;
+    display: block;
+    margin: auto;
 }
 
 /*--------------------------------------------------------------
@@ -655,6 +686,11 @@ textarea {
     margin: auto;
     position: absolute;
     margin-top: 25px;
+    transition: ease all 1s;
+}
+
+.load .site-branding {
+    transform: scale(2.5) translateY(150px);
 }
 
 .main-navigation {
@@ -662,6 +698,11 @@ textarea {
     width: 100%;
     justify-content: center;
     align-items: center;
+    transition: ease all 0.5s;
+}
+
+.load .main-navigation {
+    opacity: 0
 }
 
 .main-navigation ul {
@@ -1005,13 +1046,13 @@ textarea {
 .section {
     width: 100%;
     height: 100vh;
-    background: linear-gradient(45deg, #d7d7d7, transparent);
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     position: relative;
-    min-height: 900px;
+    min-height: 600px;
+    height: fit-content;
 }
 
 .section.intro {
@@ -1019,6 +1060,7 @@ textarea {
     color: #fff;
     background-image: url(img/intro.png);
     position: relative;
+    height: 100vh;
 }
 
 .section.intro:before {
@@ -1035,6 +1077,11 @@ textarea {
 
 .intro .content {
     position: relative;
+    transition: ease all 1s;
+}
+
+.load .intro .content {
+    opacity: 0;
 }
 
 .intro h2 {
@@ -1058,6 +1105,7 @@ textarea {
     width: 40%;
     position: relative;
     z-index: 99;
+    padding: 150px 0;
 }
 
 .design .picts {
@@ -1086,15 +1134,33 @@ textarea {
     background-image: url(img/fondo.jpg);
     font-weight: 400;
     background-size: cover;
+    z-index: 9999;
+    overflow: hidden;
+    height: 100vh;
+}
+
+.section video {
+    position: sticky!important;
+    left: 50%;
+    top: 0;
+    min-width: 100%;
+    max-height: 100vh;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    background-size: cover;
+    transform: translateX(-50%);
 }
 
 .video .text {
-    width: 40%;
+    width: 32%;
+    min-height: 500px
 }
 
 .video .text {
     font-size: 60px;
-    line-height: 55px
+    line-height: 55px;
+    text-shadow: 0 0 10px #222;
 }
 
 .video .text h2 {
@@ -1105,11 +1171,17 @@ textarea {
 }
 
 .video .picts {
-    width: 30%;
+    width: 100%;
+    position: absolute;
+    height: 100%;
+}
+
+.video .text .white.big {
+    display: none;
 }
 
 .section.video .content {
-    width: 90%;
+    width: 100%;
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -1134,6 +1206,7 @@ textarea {
 .sales .text {
     width: 60%;
     position: relative;
+    padding: 100px 0;
 }
 
 .sales .picts {
@@ -1191,7 +1264,7 @@ img.design1 {
     max-width: 70%;
     position: absolute;
     top: 20%;
-    left: 0;
+    left: -5%;
 }
 
 img.design2 {
@@ -1289,6 +1362,7 @@ ul.items li .icon img {
     width: 70%;
     position: relative;
     z-index: 9999;
+    padding-bottom: 50px;
 }
 
 .eco .picts {
@@ -1369,7 +1443,7 @@ ul.items li .icon img {
 .section.costs .picts img {
     height: auto;
     mix-blend-mode: darken;
-    top: 350px;
+    bottom: 50px;
     left: -50px;
 }
 
@@ -1429,6 +1503,7 @@ ul.items li .icon img {
     width: 50%;
     position: relative;
     text-align: center;
+    padding: 100px 0;
 }
 
 .costs .picts {
@@ -1524,7 +1599,7 @@ ul.flags li {
     text-align: center;
     height: 500px;
     min-height: initial;
-    color: #fff;
+    color: #f4f4f4;
 }
 
 ul.formats {
@@ -1566,4 +1641,151 @@ ul.formats li span {
 
 section#formats .white.btn {
     margin: auto;
+}
+
+.section.brands {
+    font-size: 30px;
+    line-height: 60px;
+    justify-content: center;
+    text-align: center;
+    height: 500px;
+    min-height: initial;
+    color: #fff;
+}
+
+ul.brands {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+ul.brands li {
+    font-size: 14px;
+    min-width: 130px;
+    margin: 10px;
+    max-width: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+ul.brands li img {
+    height: fit-content;
+    max-height: 80px;
+    width: 100%;
+}
+
+ul.brands li span {
+    display: block;
+    line-height: 22px;
+    position: absolute;
+    bottom: -30px;
+}
+
+.section.brands .content {
+    width: 70%;
+    text-align: center;
+    color: #434343;
+}
+
+section#brands .white.btn {
+    margin: auto;
+}
+
+.section.contact {
+    font-size: 30px;
+    line-height: 60px;
+    justify-content: center;
+    text-align: center;
+    min-height: 500px;
+    color: #fff;
+}
+
+.section.contact .content {
+    width: 70%;
+    text-align: center;
+    color: #434343;
+    padding-bottom: 50px
+}
+
+footer {
+    font-size: 16px;
+    line-height: 60px;
+    background: #222222;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    min-height: initial;
+    color: #fff;
+}
+
+.site-info {
+    width: 90%;
+    text-align: center;
+    position: relative;
+    padding: 50px 0;
+}
+
+.site-info h2 {
+    width: 50%;
+    text-align: left;
+    margin: 0;
+    position: relative;
+}
+
+.site-info .logo {
+    position: absolute;
+    right: 0;
+    top: 60px;
+}
+
+.site-info .info {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-wrap: wrap;
+    font-size: 20px
+}
+
+.site-info .info>div {
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+}
+
+.info ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding-bottom: 50px;
+}
+
+.info ul li {
+    width: fit-content;
+}
+
+canvas {
+    position: absolute;
+    left: 0;
+    top: 0;
+    max-width: 100vw;
+    max-height: 100vh;
+    width: 100vw;
+    height: 110vh;
+}
+
+.scroll-cont {
+    height: 3800px;
 }
