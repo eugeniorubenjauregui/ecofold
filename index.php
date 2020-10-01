@@ -23,7 +23,7 @@ get_template_part('template-parts/home', 'cost');
 get_template_part('template-parts/home', 'exec');
 get_template_part('template-parts/home', 'formats');
 get_template_part('template-parts/home', 'brands');
-// get_template_part('template-parts/home', 'cases');
+get_template_part('template-parts/home', 'cases');
 // get_template_part('template-parts/home', 'press');
 get_template_part('template-parts/home', 'contact');
 // get_sidebar();

@@ -2,7 +2,9 @@
     <section id="video" class="section video">
         <div class="content">
             <div class="picts">
-                <video id="videoclip" src="<?php bloginfo('template_directory'); ?>/video/ecofold.mp4"></video>
+                <video id="videoclip" muted>
+                    <source src="<?php bloginfo('template_directory'); ?>/video/ecofold.mp4" type="video/mp4">
+                </video>
             </div>
             <div class="text">
                 <div class="green">Tan fácil<br />

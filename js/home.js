@@ -1,60 +1,87 @@
 jQuery(window).on('load', function () {
     setTimeout(() => {
         jQuery('#page').removeClass('load');
-    }, 1000);
+    }, 2500);
 });
-jQuery(document).ready(function ($) {
-    function scrollVideo() {
-        var video = $('#videoclip').get(0),
-            videoLength = video.duration,
-            scrollPosition = $(document).scrollTop();
-        // console.log(videoLength);
-        video.currentTime = (scrollPosition / ($(document).height() - $(window).height())) * videoLength;
-        // console.log(video.currentTime);
-        if (video.currentTime >= 1) {
-            $('#abrir').fadeIn();
-        }
-        if (video.currentTime >= 3) {
-            $('#plegar').fadeIn();
-        }
-        if (video.currentTime >= 7) {
-            $('#usar').fadeIn();
-        }
-        if (video.currentTime >= 9) {
-            $('#video').css({                      // if you scroll above it
-                // position: 'static'
-            });
-            console.log('se acabó el video...');
 
-        }
+jQuery(document).ready(function () {
 
-        // } else {
-        //     $('#video').css({                      // scroll to that element or below it
-        //         position: 'fixed',
-        //         top: '0',
-        //         left: '0'
-        //     });
-        // }
-    }
 
-    var fixmeTop = $('#video').offset().top;       // get initial position of the element
-    window.addEventListener('scroll', () => {
-        var currentScroll = $(window).scrollTop(); // get current position
-
-        if (currentScroll >= fixmeTop) {           // apply position: fixed if you
-            // $('#video').css({                      // scroll to that element or below it
-            //     position: 'fixed',
-            //     top: '0',
-            //     left: '0'
-            // });
-            scrollVideo();
-        } else {                                   // apply position: static
-            $('#video').css({                      // if you scroll above it
-                // position: 'static'
-            });
-        }
-
+    var slider1 = tns({
+        container: '#oldspice .thisslide',
+        items: 1,
+        slideBy: 1,
+        autoplay: true,
+        controls: false,
+        nav: false,
+        autoplayButtonOutput: false,
+        "mouseDrag": true,
+        "swipeAngle": false,
+        "center": true,
     });
 
+    jQuery('.list-of-cases li h3').on('click', function () {
+        var cases = jQuery(this).data('name');
+        console.log(cases);
+        jQuery('.list-of-cases li h3').removeClass('active');
+        jQuery(this).addClass('active');
+        jQuery('.casedetail').removeClass('active');
+        jQuery('#' + cases).addClass('active');
+        const sliderNav = document.querySelector('#' + cases + ' .thisslide');
+        // console.log(sliderNav);
+        if (slider1.isOn) {
+            slider1.destroy();
+        }
+        // slider = slider.rebuild();
+        slider2 = tns({
+            container: sliderNav,
+            items: 1,
+            slideBy: 1,
+            autoplay: true,
+            controls: false,
+            nav: false,
+            "mouseDrag": true,
+            "swipeAngle": false,
+            "center": true,
+            autoplayButtonOutput: false
+        });
+    });
+    // Get media - with autoplay disabled (audio or video)
+    var media = jQuery('#videoclip');
+    var tolerancePixel = 10;
+    var hasPlayMap = {};
+    function checkMedia() {
+        // Get current browser top and bottom
+        var scrollTop = jQuery(window).scrollTop() + tolerancePixel;
+        var scrollBottom = jQuery(window).scrollTop() + jQuery(window).height() - tolerancePixel;
 
+        //if (jQuery(window).scrollTop() > jQuery(window).height() - 100) {
+        media.each(function (index, el) {
+            var yTopMedia = jQuery(this).offset().top;
+            var yBottomMedia = jQuery(this).height() + yTopMedia;
+
+            if (scrollTop > yTopMedia) {
+                // var thisId = jQuery(this).attr("id");
+                // if (hasPlayMap[thisId]){
+                //    return;
+                // }
+                // hasPlayMap[thisId] = true;
+                jQuery(this).get(0).play();
+                setTimeout(() => {
+                    jQuery('#abrir').fadeIn();
+                }, 1000);
+                setTimeout(() => {
+                    jQuery('#plegar').fadeIn();
+                }, 3000);
+                setTimeout(() => {
+                    jQuery('#usar').fadeIn();
+                }, 7000);
+            } else {
+                jQuery(this).get(0).pause();
+            }
+        });
+
+        //}
+    }
+    jQuery(document).on('scroll', checkMedia);
 });
