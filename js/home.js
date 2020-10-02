@@ -84,4 +84,7 @@ jQuery(document).ready(function () {
         //}
     }
     jQuery(document).on('scroll', checkMedia);
+    jQuery('.menu-toggle').on('click', function() {
+        jQuery('.menu-toggle').toggleClass('cross');
+    })
 });

@@ -66,7 +66,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
-html {
+ html {
   line-height: 1.15;
   -webkit-text-size-adjust: 100%;
 }
@@ -1077,7 +1077,7 @@ textarea {
 }
 .section {
   width: 100%;
-  height: 100vh;
+  height: 125vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1173,9 +1173,11 @@ textarea {
   background-size: cover;
   z-index: 9999;
   overflow: hidden;
-  height: 100vh;
+  height: 100vw !important;
   position: relative;
   top: 0;
+  max-height: fit-content !important;
+  min-height: 600px;
 }
 
 .section video {
@@ -1213,7 +1215,8 @@ textarea {
 .video .picts {
   width: 100%;
   position: absolute;
-  height: 100vh;
+  height: fit-content;
+  bottom: 0;
 }
 
 .video .text .white.big {
@@ -1439,6 +1442,7 @@ ul.items li .icon img {
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  min-height: 600px;
 }
 
 .section.eco .picts {
@@ -1985,6 +1989,10 @@ section#cases {
   .picts {
     display: none !important;
   }
+  .video .picts {
+    display: block !important;
+    height: 600px;
+  }
   .design .text {
     width: 100%;
     font-size: 32px;
@@ -1992,37 +2000,41 @@ section#cases {
     text-align: center;
   }
   .video .text {
-    width: 90%;
+    width: 100%;
     font-size: 36px;
     line-height: 42px;
-    min-height: 500px;
+    min-height: auto;
   }
   .video .text h2 {
-    width: 90%;
+    width: 100%;
     font-size: 60px;
     line-height: 62px;
-    min-height: 500px;
+    min-height: auto;
   }
   .video video {
-    transform: translate(-50%, -50%) scale(2);
-    width: 100%;
+    transform: scale(3);
+    width: 100vw;
     left: 0;
     top: 0;
+    z-index: 1;
+    height: 600px;
   }
   .sales .text {
-    width: 90%;
+    width: 100%;
     font-size: 36px;
     line-height: 42px;
     min-height: 500px;
   }
   ul.items {
     display: block;
+    margin: auto;
   }
   .eco .text {
     width: 90%;
     font-size: 36px;
     line-height: 42px;
     min-height: 500px;
+    margin: auto;
   }
   .costs {
     height: auto;
@@ -2046,6 +2058,10 @@ section#cases {
   }
   .section {
     height: auto !important;
+    padding-bottom: 50px;
+    text-align: center;
+    min-height: 600px !important;
+    padding: 0;
   }
   ul.brands li {
     margin: 10px;
@@ -2087,5 +2103,66 @@ section#cases {
   .main-navigation li:nth-child(3) {
     margin: 0;
     color: #fff;
+  }
+  .section.video .content {
+    justify-content: center;
+    height: 600px;
+  }
+  .green.btn.rigth,
+  .white.btn {
+    margin: auto;
+    left: auto;
+    right: auto;
+    position: relative;
+  }
+  .hamburger {
+    visibility: visible;
+    width: 20px;
+    height: 4px;
+    border-radius: 3px;
+    background: white;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: ease all 0.3s;
+  }
+
+  .hamburger:before {
+    content: "";
+    width: 20px;
+    height: 4px;
+    border-radius: 3px;
+    background: white;
+    display: block;
+    position: relative;
+    top: -9px;
+    transition: ease all 0.3s;
+  }
+
+  .hamburger:after {
+    content: "";
+    width: 20px;
+    height: 4px;
+    border-radius: 3px;
+    background: white;
+    display: block;
+    position: relative;
+    top: 5px;
+    transition: ease all 0.3s;
+  }
+
+  .hamburger.cross {
+    background: transparent;
+  }
+
+  .hamburger.cross:before {
+    transform: rotate(45deg);
+    top: 0px;
+  }
+
+  .hamburger.cross:after {
+    transform: rotate(-45deg);
+    top: -4px;
   }
 }
