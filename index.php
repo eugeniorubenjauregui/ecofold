@@ -17,6 +17,9 @@ get_header();
 get_template_part('template-parts/home', 'intro');
 get_template_part('template-parts/home', 'design');
 get_template_part('template-parts/home', 'video');
+if (wp_is_mobile()) {
+    //get_template_part('template-parts/home', 'slide');
+}
 get_template_part('template-parts/home', 'sales');
 get_template_part('template-parts/home', 'eco');
 get_template_part('template-parts/home', 'cost');

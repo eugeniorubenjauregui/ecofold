@@ -5,47 +5,85 @@ jQuery(window).on('load', function () {
 });
 
 jQuery(document).ready(function () {
-
-
-    var slider1 = tns({
-        container: '#oldspice .thisslide',
-        items: 1,
-        slideBy: 1,
-        autoplay: true,
-        controls: false,
-        nav: false,
-        autoplayButtonOutput: false,
+    var sliderForm = tns({
+        container: '#formatsSlide',
+        items: 5,
+        slideBy: 5,
+        // autoplay: true,
+        controls: true,
+        // nav: true,
         "mouseDrag": true,
         "swipeAngle": false,
-        "center": true,
-    });
-
-    jQuery('.list-of-cases li h3').on('click', function () {
-        var cases = jQuery(this).data('name');
-        console.log(cases);
-        jQuery('.list-of-cases li h3').removeClass('active');
-        jQuery(this).addClass('active');
-        jQuery('.casedetail').removeClass('active');
-        jQuery('#' + cases).addClass('active');
-        const sliderNav = document.querySelector('#' + cases + ' .thisslide');
-        // console.log(sliderNav);
-        if (slider1.isOn) {
-            slider1.destroy();
+        autoplayButtonOutput: false,
+        responsive: {
+            640: {
+                edgePadding: 0,
+                gutter: 50,
+                items: 1,
+                slideBy: 1,
+            },
+            900: {
+                items: 5,
+                edgePadding: 20,
+                gutter: 20,
+                slideBy: 1,
+            },
         }
-        // slider = slider.rebuild();
-        slider2 = tns({
-            container: sliderNav,
-            items: 1,
-            slideBy: 1,
-            autoplay: true,
-            controls: false,
-            nav: false,
-            "mouseDrag": true,
-            "swipeAngle": false,
-            "center": true,
-            autoplayButtonOutput: false
-        });
     });
+    // const sliderpict = document.querySelector('#sliderpict');
+    // if (sliderpict) {
+    //     var sliderPict = tns({
+    //         container: sliderpict,
+    //         items: 1.2,
+    //         slideBy: 1,
+    //         autoplay: true,
+    //         controls: true,
+    //         center: true,
+    //         // nav: true,
+    //         "mouseDrag": true,
+    //         "swipeAngle": false,
+    //         autoplayButtonOutput: false
+    //     });
+    // }
+    // var slider1 = tns({
+    //     container: '#oldspice .thisslide',
+    //     items: 1.1,
+    //     slideBy: 1,
+    //     autoplay: true,
+    //     controls: false,
+    //     nav: false,
+    //     autoplayButtonOutput: false,
+    //     "mouseDrag": true,
+    //     "swipeAngle": false,
+    //     "center": true,
+    // });
+
+    // jQuery('.list-of-cases li h3').on('click', function () {
+    //     var cases = jQuery(this).data('name');
+    //     console.log(cases);
+    //     jQuery('.list-of-cases li h3').removeClass('active');
+    //     jQuery(this).addClass('active');
+    //     jQuery('.casedetail').removeClass('active');
+    //     jQuery('#' + cases).addClass('active');
+    //     const sliderNav = document.querySelector('#' + cases + ' .thisslide');
+    //     // console.log(sliderNav);
+    //     if (slider1.isOn) {
+    //         slider1.destroy();
+    //     }
+    //     // slider = slider.rebuild();
+    //     slider2 = tns({
+    //         container: sliderNav,
+    //         items: 1,
+    //         slideBy: 1,
+    //         autoplay: true,
+    //         controls: false,
+    //         nav: false,
+    //         "mouseDrag": true,
+    //         "swipeAngle": false,
+    //         "center": true,
+    //         autoplayButtonOutput: false
+    //     });
+    // });
     // Get media - with autoplay disabled (audio or video)
     var media = jQuery('#videoclip');
     var tolerancePixel = 10;

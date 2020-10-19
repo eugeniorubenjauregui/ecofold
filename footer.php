@@ -18,7 +18,7 @@
 		<div class="logo"><img src="<?php bloginfo('template_directory'); ?>/img/SVG/logo-ecofold.svg" alt="Ecofold" width="140" /></div>
 		<div class="info">
 			<ul>
-				<li><a href="mailto:info@estudiopenta.com" target="_blank">info@estudiopenta.com</a></li>
+				<li><a href="mailto:info@ecofold.com" target="_blank">info@ecofold.com</a></li>
 				<li>Buenos Aires, Argentina</li>
 				<li><a href="tel:54 11 4793 6515" target="_blank">(54 11) 4793 6515 </a></li>
 			</ul>
@@ -30,7 +30,9 @@
 
 <?php wp_footer(); ?>
 <script>
-	AOS.init();
+	AOS.init({
+		once: true, // whether animation should happen only once - while scrolling down
+	});
 </script>
 </body>
 
