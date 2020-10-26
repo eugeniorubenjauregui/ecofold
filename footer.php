@@ -15,11 +15,15 @@
 <footer id="colophon" class="site-footer">
 	<div class="site-info">
 		<h2>Contacto</h2>
-		<div class="logo"><img src="<?php bloginfo('template_directory'); ?>/img/SVG/logo-ecofold.svg" alt="Ecofold" width="140" /></div>
+		<div class="logo"><img src="<?php bloginfo('template_directory'); ?>/img/SVG/logo-ecofold.svg" alt="Ecofold" width="140" />
+			<ul class="social">
+				<li><a href="https://www.linkedin.com/company/estudio-penta/?originalSubdomain=ar" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+				<li><a href="https://www.instagram.com/estudio_penta/?hl=es" target="_blank"><i class="fab fa-instagram"></i></a></li>
+			</ul>
+		</div>
 		<div class="info">
 			<ul>
 				<li><a href="mailto:info@ecofold.com" target="_blank">info@ecofold.com</a></li>
-				<li>Buenos Aires, Argentina</li>
 				<li><a href="tel:54 9 1158726353" target="_blank">+54 9 1158726353 / +54 91121656035</a></li>
 			</ul>
 			<div>&copy; <?= date('Y') ?> Estudio Penta | Avenida Del Libertador 1000 Vicente López, B1638 BEV, Provincia de Buenos Aires | Argentina</div>

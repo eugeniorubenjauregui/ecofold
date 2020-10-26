@@ -187,3 +187,8 @@ if (defined('JETPACK__VERSION')) {
  * Load CSS & JS scripts.
  */
 require get_template_directory() . '/inc/scripts.php';
+
+/**
+ * Casos CTP
+ */
+require get_template_directory() . '/inc/casos-exito.php';

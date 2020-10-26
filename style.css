@@ -1919,7 +1919,18 @@ footer {
   right: 0;
   top: 60px;
 }
-
+.site-info .logo .social {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: flex-end;
+  font-size: 32px;
+  color: #51bb47;
+}
+.site-info .logo .social li {
+  margin-left: 10px;
+}
 .site-info .info {
   display: flex;
   justify-content: space-between;
@@ -1934,21 +1945,25 @@ footer {
   width: 100%;
   text-align: center;
   font-size: 14px;
+  line-height: 20px;
 }
 
 .info ul {
   list-style: none;
   padding: 0;
   margin: 0;
-  display: flex;
+  display: block;
   justify-content: space-between;
   align-items: center;
   width: 100%;
   padding-bottom: 50px;
+  max-width: 100%;
 }
 
 .info ul li {
   width: fit-content;
+  font-size: 14px;
+  max-height: 24px;
 }
 
 canvas {
@@ -2401,7 +2416,7 @@ section#cases .content {
     border-radius: 50px;
     color: #fff;
     padding: 0 40px;
-    transition: ease all 0.2s;
+    transition: ease all 0.2s;  
     cursor: pointer;
     min-height: 40px;
     margin: auto;
