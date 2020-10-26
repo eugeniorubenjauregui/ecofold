@@ -26,7 +26,7 @@ class Detector {
     return this.mobile() && !this.phone();
   }
 
-  // http://browserhacks.com/#hack-acea075d0ac6954f275a70023906050c
+  // https://browserhacks.com/#hack-acea075d0ac6954f275a70023906050c
   ie11() {
     return (
       '-ms-scroll-limit' in document.documentElement.style &&

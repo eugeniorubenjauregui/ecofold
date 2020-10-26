@@ -20,9 +20,9 @@
 			<ul>
 				<li><a href="mailto:info@ecofold.com" target="_blank">info@ecofold.com</a></li>
 				<li>Buenos Aires, Argentina</li>
-				<li><a href="tel:54 11 4793 6515" target="_blank">(54 11) 4793 6515 </a></li>
+				<li><a href="tel:54 9 1158726353" target="_blank">+54 9 1158726353 / +54 91121656035</a></li>
 			</ul>
-			<div>&copy; <?= date('Y') ?> Estudio Penta | Gral. Paunero 1926 | Martinez | Provincia de Buenos Aires | Argentina</div>
+			<div>&copy; <?= date('Y') ?> Estudio Penta | Avenida Del Libertador 1000 Vicente López, B1638 BEV, Provincia de Buenos Aires | Argentina</div>
 		</div>
 	</div><!-- .site-info -->
 </footer><!-- #colophon -->

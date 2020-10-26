@@ -45,7 +45,7 @@ let options = {
 };
 
 // Detect not supported browsers (<=IE9)
-// http://browserhacks.com/#hack-e71d8692f65334173fee715c222cb805
+// https://browserhacks.com/#hack-e71d8692f65334173fee715c222cb805
 const isBrowserNotSupported = () => document.all && !window.atob;
 
 const initializeScroll = function initializeScroll() {

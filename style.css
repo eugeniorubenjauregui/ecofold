@@ -1,8 +1,8 @@
 /*!
 Theme Name: EcoFold
-Theme URI: http://underscores.me/
+Theme URI: https://underscores.me/
 Author: Eugenio Jauregui
-Author URI: http://www.ejdg.com.ar
+Author URI: https://www.ejdg.com.ar
 Description: Estudio Penta - 2020
 Version: 1.0.0
 Tested up to: 5.4
@@ -387,7 +387,7 @@ template {
                 --------------------------------------------- */
 
 /* Inherit box-sizing to more easily change it's value on a component level.
-                @link http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+                @link https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
 *,
 *::before,
 *::after {
@@ -1267,12 +1267,14 @@ textarea {
   background: #f4f4f4;
   justify-content: flex-start;
   min-height: 800px;
+  padding: 50px 0;
 }
 
 .sales .text {
   width: 52%;
   position: relative;
   padding: 0;
+  padding-bottom: 50px;
 }
 
 .sales .picts {
@@ -1423,6 +1425,8 @@ ul.items li .icon {
   cursor: pointer;
   left: 35%;
   position: relative;
+  max-width: 300px;
+  min-width: 275px;
 }
 
 ul.items li .icon img {
@@ -1439,6 +1443,11 @@ ul.items li .icon img {
   right: 30%;
   position: absolute;
   bottom: -50px;
+}
+.sales .green.btn.rigth {
+  right: 30%;
+  position: absolute;
+  bottom: 30px;
 }
 
 .section.eco {
@@ -1557,6 +1566,7 @@ ul.items li .icon img {
   bottom: 150px;
   left: 50px;
   top: auto;
+  max-width: 48%;
 }
 
 .costs .text h3 {
@@ -1958,9 +1968,14 @@ section#cases {
   min-height: 600px;
   max-width: 1600px;
   margin: auto;
-  max-height: 600px;
 }
-
+section#cases .content {
+  max-width: 1400px;
+  width: 96%;
+  margin: auto;
+  padding: 100px 0;
+  padding-bottom: 0px;
+}
 .photos {
   width: 40%;
   min-height: 600px;
@@ -1985,10 +2000,11 @@ section#cases {
   font-weight: 700;
   color: #5bb24a;
   font-size: 40px;
-  position: absolute;
-  top: 25px;
-  right: 25px;
+  position: relative;
+  top: 0;
+  right: 0;
   border-bottom: 1px solid;
+  margin: auto;
 }
 
 .cases ul {
@@ -1997,33 +2013,67 @@ section#cases {
   margin: 0;
   font-size: 20px;
   font-weight: 700;
-  width: 60%;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
 }
 
 .cases ul li {
-  border-bottom: 1px solid #333;
   cursor: pointer;
   transition: ease all 0.3s;
-  padding: 0 25px;
+  padding: 50px;
+  width: calc(100% / 3);
+  position: relative;
 }
 
 .cases ul li h3 {
   font-weight: inherit;
   transition: ease all 0.3s;
-  margin: 10px 0;
+  margin: 0;
+  position: relative;
+  padding-top: 50px;
+  margin-bottom: 25px;
+  font-size: 18px;
 }
-
+.cases ul li h3:after {
+  color: #fff;
+  content: "";
+  display: block;
+  background: #333;
+  font-size: 18px;
+  letter-spacing: 1px;
+  height: 2px;
+  position: absolute;
+  width: 70px;
+  top: 40px;
+}
 .cases ul li h3.new {
   color: #5bb24a;
 }
-.cases ul li h3:before {
-  color: #5bb24a;
+.cases ul li h3.new:before {
+  color: #fff;
+  content: "New!";
+  display: block;
+  background: #5bb24a;
+  padding: 2px 6px;
+  font-size: 16px;
+  letter-spacing: 1px;
+  width: fit-content;
+  top: 0;
+  position: absolute;
 }
 
 .cases ul li:hover {
   transform: scale(1.1);
 }
-
+.cases ul li .flag {
+  width: 40px;
+  position: absolute;
+  top: 100px;
+  right: 50px;
+}
 .photos:before {
   width: 100%;
   height: 100%;
@@ -2051,8 +2101,8 @@ section#cases {
   border-radius: 3px;
   background: #999;
   position: fixed;
-  right: 20px;
-  top: 55px;
+  right: 25px;
+  top: 70px;
   transition: ease all 0.3s;
   z-index: 999;
   cursor: pointer;
@@ -2256,9 +2306,9 @@ section#cases {
   .white.btn {
     margin: auto;
     left: auto;
-    right: auto;
-    position: relative;
-    bottom: 0px;
+    right: auto !important;
+    position: relative !important;
+    bottom: 0px !important;
   }
   .hamburger {
     visibility: visible;
@@ -2371,5 +2421,8 @@ section#cases {
     left: 50%;
     width: 100%;
     height: 100px;
+  }
+  .cases ul li {
+    width: 100%;
   }
 }

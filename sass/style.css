@@ -1,8 +1,8 @@
 /*!
 Theme Name: EcoFold
-Theme URI: http://underscores.me/
+Theme URI: https://underscores.me/
 Author: Eugenio Jauregui
-Author URI: http://www.ejdg.com.ar
+Author URI: https://www.ejdg.com.ar
 Description: Estudio Penta - 2020
 Version: 1.0.0
 Tested up to: 5.4
@@ -369,7 +369,7 @@ template {
 /* Box sizing
 --------------------------------------------- */
 /* Inherit box-sizing to more easily change it's value on a component level.
-@link http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+@link https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
 *,
 *::before,
 *::after {

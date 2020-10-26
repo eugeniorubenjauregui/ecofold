@@ -1,8 +1,8 @@
-jQuery(window).on('load', function () {
+// jQuery(window).on('load', function () {
     setTimeout(() => {
         jQuery('#page').removeClass('load');
     }, 2500);
-});
+// });
 
 jQuery(document).ready(function () {
     var sliderForm = tns({
@@ -122,4 +122,21 @@ jQuery(document).ready(function () {
         //}
     }
     jQuery(document).on('scroll', checkMedia);
+    var $document = jQuery(document),
+        $element = jQuery('.hamburger'),
+        className = 'hidden';
+
+    $document.on('scroll', function () {
+        if ($document.scrollTop() >= 50) {
+            // user scrolled 50 pixels or more;
+            // do stuff
+            $element.removeClass(className);
+        } else {
+            $element.addClass(className);
+        }
+    });
+    $document.on('click', function () {
+        $element.toggleClass('cross');
+        jQuery('.site-header').toggleClass('fix');
+    });
 });

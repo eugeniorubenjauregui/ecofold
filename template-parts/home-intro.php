@@ -2,7 +2,7 @@
     <div class="content">
         <?php if (wp_is_mobile()) { ?>
             <div class="img-mobile">
-                <img src="<?php bloginfo('template_directory'); ?>/video/video.gif" alt="ecofold"/>
+                <img src="<?php bloginfo('template_directory'); ?>/video/back.jpg" alt="ecofold"/>
             </div>
         <?php } else { ?>
             <video id="introclip" preload autoplay muted loop playsinline>
